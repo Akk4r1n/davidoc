@@ -12,4 +12,8 @@ export class SidenavComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  toggleDrawer(): void {
+    console.log("Test");
+  }
+
 }
