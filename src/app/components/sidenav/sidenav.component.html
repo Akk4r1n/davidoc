@@ -1,8 +1,23 @@
 <mat-sidenav-container>
   Container
+
   <!-- Sidenav -->
-  <mat-sidenav class="mat-elevation-z10" opened="true" mode="side">
-    Sidenav
+  <mat-sidenav class="mat-elevation-z10" [opened]="sidenavOpened" mode="side">
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header class="mat-elevation-z1">
+          <mat-panel-title>
+            Setup
+          </mat-panel-title>
+          <mat-panel-description>
+            
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div class="content">
+          <p>This is the primary content of the panel.</p>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>  
   </mat-sidenav>
 
   <!-- Actual content -->

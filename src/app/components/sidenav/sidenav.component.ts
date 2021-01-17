@@ -1,11 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-sidenav',
   templateUrl: './sidenav.component.html',
-  styleUrls: ['./sidenav.component.css']
+  styleUrls: ['./sidenav.component.css'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class SidenavComponent implements OnInit {
+
+  sidenavOpened : boolean = true;
 
   constructor() { }
 
@@ -13,7 +16,7 @@ export class SidenavComponent implements OnInit {
   }
 
   toggleDrawer(): void {
-    console.log("Test");
+    this.sidenavOpened = !this.sidenavOpened;
   }
 
 }

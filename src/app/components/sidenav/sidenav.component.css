@@ -4,10 +4,19 @@ mat-sidenav-container {
 }
 
 mat-sidenav {
+    padding: 1%;
     width: 20%;
     height: 100%;
 }
 
 mat-sidenav-content {
     padding: 1%;
+}
+
+.mat-expansion-panel-body {
+    padding: 0 !important;
+}
+
+.content {
+    padding: 5%;
 }
