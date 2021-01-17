@@ -12,12 +12,20 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatListModule } from '@angular/material/list';
+
+import { IsParentPipe } from './pipes/is-parent.pipe';
+import { HasChildsPipe } from './pipes/has-childs.pipe';
+import { CallbackPipe } from './pipes/callback.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     ToolbarComponent,
-    SidenavComponent
+    SidenavComponent,
+    IsParentPipe,
+    HasChildsPipe,
+    CallbackPipe
   ],
   imports: [
     BrowserModule,
@@ -27,7 +35,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatIconModule,
     MatButtonModule,
     MatSidenavModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
