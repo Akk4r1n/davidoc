@@ -5,8 +5,11 @@
   flex-direction: column;
 }
 
+app-toolbar {
+  z-index: 2;
+}
+
 app-sidenav {
   flex-grow: 1;
-  z-index: -1;
 }
 
