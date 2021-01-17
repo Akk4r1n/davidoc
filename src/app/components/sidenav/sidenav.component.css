@@ -20,3 +20,25 @@ mat-sidenav-content {
 .content {
     padding: 5%;
 }
+
+.nav-item-list {
+    width: 100%;
+    padding: 0;
+}
+
+.nav-item {
+    margin-top: 2%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    /*border-width: 1px;
+    border-color: black;
+    border-bottom-style: solid;*/
+}
+
+a {
+    box-sizing: border-box;
+    padding-left: 10%;
+    text-decoration: none;
+    color: inherit;
+}

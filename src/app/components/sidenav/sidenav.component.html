@@ -3,9 +3,80 @@
 
   <!-- Sidenav -->
   <mat-sidenav class="mat-elevation-z10" [opened]="sidenavOpened" mode="side">
-    <mat-accordion>
+    
+    <mat-accordion multi>
       <mat-expansion-panel>
-        <mat-expansion-panel-header class="mat-elevation-z1">
+        <mat-expansion-panel-header><mat-panel-title>Navigation</mat-panel-title></mat-expansion-panel-header>
+
+        <div class="nav-item-list">
+
+
+
+          <ng-container *ngFor="let documentation of myDocumentations | isParent: filterDocumentations; let i = index">
+
+            <div class="nav-item-list" *ngIf="documentation.childs.length > 0">
+  
+  
+              <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    {{documentation.title}}
+                  </mat-panel-title>
+                  <mat-panel-description></mat-panel-description>
+                </mat-expansion-panel-header>
+
+                <div class="content" *ngIf="documentation.childs.length > 0; else elseBlock">
+
+                  <mat-expansion-panel *ngFor="let child of documentation.childs">
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>
+                        {{child.title}}
+                      </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <mat-panel-description></mat-panel-description>
+                    <div class="content">
+                      <mat-expansion-panel *ngFor="let grandChild of child.childs">
+                        <mat-expansion-panel-header>
+                          <mat-panel-title>
+                            {{grandChild.title}}
+                          </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <mat-panel-description></mat-panel-description>
+                        <div class="content">
+                          <p>This is the primary content of the panel of a grandchild</p>
+                        </div>
+                      </mat-expansion-panel>
+                    </div>
+                  </mat-expansion-panel>
+                </div>
+                <ng-template #elseBlock>
+                  
+                </ng-template>
+              </mat-expansion-panel>
+    
+    
+              
+    
+              
+  
+  
+            </div>
+  
+            <a *ngIf="documentation.childs.length === 0" href="https://www.google.com" style="width: 100%; height: 50px; margin: 0;" class="nav-item mat-elevation-z1">{{documentation.title}}</a>
+            
+          </ng-container>
+
+
+
+
+        </div>
+
+        
+        <!--<mat-expansion-panel *ngFor="let documentation of myDocumentations | isParent: filterDocumentations | callback: hasChilds; let i = index" *ngIf="documentation.childs.length > 0">-->
+        </mat-expansion-panel>
+      
+      <!--<mat-expansion-panel>
+        <mat-expansion-panel-header>
           <mat-panel-title>
             Setup
           </mat-panel-title>
@@ -16,7 +87,7 @@
         <div class="content">
           <p>This is the primary content of the panel.</p>
         </div>
-      </mat-expansion-panel>
+      </mat-expansion-panel>-->
     </mat-accordion>  
   </mat-sidenav>
 
