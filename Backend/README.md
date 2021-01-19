@@ -7,5 +7,5 @@
 - docker installed
 - docker-compose installed
 
-# Run the backend
+## Run
 cd into the directory and do "docker-compose up --build" to build the images and run the containers
