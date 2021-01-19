@@ -10,10 +10,11 @@ def index():
 def login():
     return "Trying to login huh"
 
-@app.route("/documentations")
-def get_documentations():
+@app.route("/documentation")
+def get_documentation():
     # TODO: get path from config
-    documentationPath = "/Documentation"
+    # This is the path from inside the container
+    documentationPath = "/documentation"
     scanned_folder = scan_folder_recursively({}, documentationPath)
     return scanned_folder
 
