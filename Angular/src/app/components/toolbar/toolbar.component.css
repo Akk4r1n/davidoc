@@ -1,0 +1,13 @@
+mat-toolbar {
+  display: flex;
+  padding: 10px;
+}
+
+.title {
+  font-size: 1.5em;
+  letter-spacing: 0.1em;
+}
+
+.filler-span {
+  flex-grow: 1;
+}

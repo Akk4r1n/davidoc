@@ -6,5 +6,8 @@ export interface Documentation {
   childs: Documentation[],
   title: string, 
   // if content is empty then iterate only through the childs
-  content: string
+  content: string,
+  // decide in which order the documentation is shown
+  // smaller numbers comes first
+  orderIndex: number,
 }
