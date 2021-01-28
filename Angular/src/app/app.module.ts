@@ -19,6 +19,8 @@ import { HasChildsPipe } from './pipes/has-childs.pipe';
 import { CallbackPipe } from './pipes/callback.pipe';
 import { DocviewerComponent } from './components/docviewer/docviewer.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +40,8 @@ import { DocviewerComponent } from './components/docviewer/docviewer.component';
     MatButtonModule,
     MatSidenavModule,
     MatExpansionModule,
-    MatListModule
+    MatListModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

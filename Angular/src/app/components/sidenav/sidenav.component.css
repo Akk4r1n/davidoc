@@ -28,9 +28,10 @@ mat-sidenav-content {
 
 .nav-item {
     margin-top: 2%;
-    height: 100px;
+    height: 50px;
     display: flex;
     align-items: center;
+    margin-left: 5%;
     /*border-width: 1px;
     border-color: black;
     border-bottom-style: solid;*/
