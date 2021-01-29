@@ -19,7 +19,9 @@ import { HasChildsPipe } from './pipes/has-childs.pipe';
 import { CallbackPipe } from './pipes/callback.pipe';
 import { DocviewerComponent } from './components/docviewer/docviewer.component';
 
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+
+import { MarkdownModule } from 'ngx-markdown';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatSidenavModule,
     MatExpansionModule,
     MatListModule,
-    HttpClientModule
+    HttpClientModule,
+    MarkdownModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
