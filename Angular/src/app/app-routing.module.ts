@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { DocviewerComponent } from './components/docviewer/docviewer.component';
 
 const routes: Routes = [
-  { path: "docviewer/:id", component: DocviewerComponent },
+  { path: "documentation/:specifiedPath", component: DocviewerComponent },
 ];
 
 @NgModule({

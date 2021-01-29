@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-docviewer',
@@ -8,13 +9,14 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class DocviewerComponent implements OnInit {
 
-  documentationId : number;
+  specifiedPath: string;
 
-  constructor(private route: ActivatedRoute) {
-    this.route.params.subscribe(params => this.documentationId = params.id);
+  constructor(private route: ActivatedRoute, public router: Router) {
+    this.route.params.subscribe(path => this.specifiedPath = path.specifiedPath);
   }
 
   ngOnInit(): void {
+    console.log(this.specifiedPath);
   }
 
 }
