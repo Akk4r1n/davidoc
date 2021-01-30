@@ -1,6 +1,7 @@
 import os
 from os import walk
 from flask import send_file
+from flask import send_from_directory
 from . import app
 
 @app.route("/")
@@ -35,7 +36,8 @@ Get the file content for the given path
 def get_file_dynamically(subpath):
     print(subpath)
     try:
-        return send_file(f"/documentation/{subpath}.md")
+        # return send_file(f"/documentation/{subpath}.md")
+        return send_from_directory("/documentation/", f"{subpath}.md", as_attachment=True)
     except Exception as exception:
         return str(exception)
 
