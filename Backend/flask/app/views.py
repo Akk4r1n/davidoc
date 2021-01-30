@@ -1,16 +1,26 @@
-from app import app
 import os
 from os import walk
+from flask import send_file
+from . import app
 
 @app.route("/")
 def index():
-    return "Hello from Flask in a container!"
+    return """
+    <h1>Hello from Flask in a container!</h1>
+    <h2>This is the backend for DaviDoc!</h2>
+    <br>
+    <h2>List of existing endpoints:</h2>
+    <hr>
+    <ul>
+      <li>/doc - returns the folder structure for the documentation</li>
+      <li>/doc/path - returns the content of a file with the given path</li>
+    </ul>
+    """
 
-@app.route("/login")
-def login():
-    return "Trying to login huh"
-
-@app.route("/documentation")
+"""
+Get the folder structure for the entire documentation
+"""
+@app.route("/doc")
 def get_documentation():
     # TODO: get path from config
     # This is the path from inside the container
@@ -18,6 +28,20 @@ def get_documentation():
     scanned_folder = scan_folder_recursively({}, documentationPath)
     return scanned_folder
 
+"""
+Get the file content for the given path
+"""
+@app.route("/doc/<path:subpath>")
+def get_file_dynamically(subpath):
+    print(subpath)
+    try:
+        return send_file(f"/documentation/{subpath}.md")
+    except Exception as exception:
+        return str(exception)
+
+"""
+Scan the directory recursively for all folders and files
+"""
 def scan_folder_recursively(myDictionary, path):
     # use the walk function from the os-module to get the path and the names of all files and folders seperated in that folder
     for dirpath, dirnames, filenames in walk(path):
@@ -40,6 +64,9 @@ def scan_folder_recursively(myDictionary, path):
         # return the dictionary
         return myDictionary
 
+"""
+Get all files in the given directory
+"""
 def get_files(path):
     for dirpath, dirnames, filenames in walk(path):
         fileList = []
