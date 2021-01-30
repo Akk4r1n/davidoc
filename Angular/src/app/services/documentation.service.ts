@@ -11,7 +11,7 @@ export class DocumentationService {
 
   // url for the backend - endpoint documentation to get the folder structure
   // TODO: get the url from a configuration file or from environment variables
-  documentationUrl = "http://185.232.71.203/documentation";
+  documentationUrl = "http://185.232.71.203/doc";
 
   constructor(private http: HttpClient) { }
 
