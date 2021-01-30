@@ -1,5 +1,5 @@
 <div class="container">
-  <h2>{{specifiedPath}}</h2>
+  <h2>{{specifiedPath | path}}</h2>
   <hr>
   <markdown ngPreserveWhitespaces>
     # Markdown
@@ -9,4 +9,7 @@
     ##### Markdown
     ###### Markdown
   </markdown>
+  <hr>
+  <!--<markdown [src]="'assets/doc/Setup_Docker.md'"></markdown>-->
+  <markdown [src]="specifiedPath | path"></markdown>
 </div>

@@ -22,6 +22,7 @@ import { DocviewerComponent } from './components/docviewer/docviewer.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 import { MarkdownModule } from 'ngx-markdown';
+import { PathPipe } from './pipes/path.pipe';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { MarkdownModule } from 'ngx-markdown';
     IsParentPipe,
     HasChildsPipe,
     CallbackPipe,
-    DocviewerComponent
+    DocviewerComponent,
+    PathPipe
   ],
   imports: [
     BrowserModule,
