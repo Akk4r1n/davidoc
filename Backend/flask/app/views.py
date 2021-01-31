@@ -74,7 +74,7 @@ def get_files(path):
         fileList = []
         for fileItem in filenames:
             fileDict = {}
-            fileDict["Filename"] = "'" + fileItem + "'"
-            fileDict["Path"] = "'" + dirpath + f"/{fileItem}" + "'"
+            fileDict["Filename"] = fileItem
+            fileDict["Path"] = dirpath + f"/{fileItem}"
             fileList.append(fileDict)
         return fileList
