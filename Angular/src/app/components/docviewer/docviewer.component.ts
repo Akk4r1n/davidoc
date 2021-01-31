@@ -1,7 +1,6 @@
-import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, UrlSegment } from '@angular/router';
 import { MyMarkdownService } from 'src/app/services/myMarkdown.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-docviewer',
@@ -13,21 +12,11 @@ export class DocviewerComponent implements OnInit {
   specifiedPath: string;
   markdown: string;
 
-  constructor(private route: ActivatedRoute, private myMarkdownService: MyMarkdownService, private router: Router) {
+  constructor(private route: ActivatedRoute, private myMarkdownService: MyMarkdownService) {
     this.route.params.subscribe(path => this.specifiedPath = path.specifiedPath);
   }
 
   ngOnInit(): void {
-    this.markdown = `
-    # IndexAA
-    ## About this Documentation
-    This **application** aims at...
-    ### Workflow
-    In the first step...
-    `
-
-    
-
     this.route.url.subscribe((url : UrlSegment[]) => {
       let myPath: string = "";
       console.log(url);
@@ -40,12 +29,6 @@ export class DocviewerComponent implements OnInit {
         this.markdown = data;
       })
     });
-
-
-
-    // this.myMarkdownService.getMarkdown(this.specifiedPath).subscribe((data : string) => {
-    //   this.markdown = data;
-    // })
   }
 
 }
