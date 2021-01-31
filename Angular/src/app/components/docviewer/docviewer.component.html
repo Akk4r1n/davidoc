@@ -1,16 +1,3 @@
 <div class="container">
-  <h2>{{specifiedPath | path}}</h2>
-  <hr>
-  <markdown ngPreserveWhitespaces>
-    # Markdown
-    ## Markdown
-    ### Markdown
-    #### Markdown
-    ##### Markdown
-    ###### Markdown
-  </markdown>
-  <hr>
-  <!--<markdown [src]="'assets/doc/Setup_Docker.md'"></markdown>-->
-  <!--<markdown [src]="specifiedPath | path"></markdown>-->
-  <!--<markdown src="http://185.232.71.203/doc/index"></markdown>-->
+  <markdown ngPreserveWhitespaces [data]="markdown"></markdown>
 </div>
