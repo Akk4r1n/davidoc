@@ -30,4 +30,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 For the backend use the docker-compose file. Type ```docker-compose up --build -d```.
 
-For the frontend use the Dockerfile itself. Type ```docker build -t myangularfrontend```.
+For the frontend use the Dockerfile itself. Type ```docker build -t myangularfrontend . ```.
